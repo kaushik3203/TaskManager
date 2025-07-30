@@ -14,8 +14,6 @@ import {
   Trash,
   Users,
   StatusPage,
-  ApplyLeave,
-  LeaveRequests,
 } from "./pages";
 import { setOpenSidebar } from "./redux/slices/authSlice";
 
@@ -134,8 +132,6 @@ const App = () => {
         <Routes>
           <Route path='/log-in' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/leave-application' element={<ApplyLeave />} />
-          <Route path='/leave-requests' element={<LeaveRequests />} />
 
           <Route element={<Layout />}>
             <Route index psth='/' element={<Navigate to='/dashboard' />} />
@@ -146,8 +142,6 @@ const App = () => {
             <Route path='/todo/:status?' element={<Tasks />} />
             <Route path='/trashed' element={<Trash />} />
             <Route path='/task/:id' element={<TaskDetail />} />
-            <Route path='/apply-leave' element={<ApplyLeave />} />
-            <Route path='/leave-requests' element={<LeaveRequests />} />
             <Route path='/team' element={<Users />} />
             <Route path='/status' element={<StatusPage />} />
           </Route>

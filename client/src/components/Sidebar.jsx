@@ -54,16 +54,6 @@ const linkData = [
     link: "trashed",
     icon: <FaTrashAlt />,
   },
-  {
-    label: "Apply Leave",
-    link: "apply-leave",
-    icon: <MdOutlineAddTask />,
-  },
-  {
-    label: "Leave Requests",
-    link: "leave-requests",
-    icon: <MdOutlinePendingActions />,
-  },
 ];
 
 const Sidebar = () => {
@@ -72,7 +62,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const path = location.pathname.split("/")[1];
-  const sidebarLinks = user?.isAdmin ? linkData : linkData.slice(0, 9); // Adjusted slice to include Apply Leave for non-admin
+  const sidebarLinks = user?.isAdmin ? linkData : linkData.slice(0, 8); // Adjusted slice to remove Apply Leave for non-admin
 
   const closeSidebar = () => {
     dispatch(setOpenSidebar(false));
